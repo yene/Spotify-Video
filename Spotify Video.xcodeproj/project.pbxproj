@@ -11,6 +11,7 @@
 		AE19F2D81B46DB6F00619D05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19F2D71B46DB6F00619D05 /* main.m */; };
 		AE19F2DA1B46DB6F00619D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2D91B46DB6F00619D05 /* Assets.xcassets */; };
 		AE19F2DD1B46DB6F00619D05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2DB1B46DB6F00619D05 /* MainMenu.xib */; };
+		AE19F2F31B46DDD100619D05 /* spotify.scpt in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2F21B46DD1C00619D05 /* spotify.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		AE19F2D91B46DB6F00619D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE19F2DC1B46DB6F00619D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AE19F2DE1B46DB6F00619D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE19F2F21B46DD1C00619D05 /* spotify.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = spotify.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		AE19F2D21B46DB6F00619D05 /* Spotify Video */ = {
 			isa = PBXGroup;
 			children = (
+				AE19F2F21B46DD1C00619D05 /* spotify.scpt */,
 				AE19F2D31B46DB6F00619D05 /* AppDelegate.h */,
 				AE19F2D41B46DB6F00619D05 /* AppDelegate.m */,
 				AE19F2D91B46DB6F00619D05 /* Assets.xcassets */,
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE19F2F31B46DDD100619D05 /* spotify.scpt in Resources */,
 				AE19F2DA1B46DB6F00619D05 /* Assets.xcassets in Resources */,
 				AE19F2DD1B46DB6F00619D05 /* MainMenu.xib in Resources */,
 			);
