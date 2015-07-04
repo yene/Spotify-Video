@@ -4,7 +4,6 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.AVKitIBPlugin" version="8121.20"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8121.20"/>
-        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -17,7 +16,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="playerView" destination="Ace-tG-AWN" id="3RD-GX-5Y5"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+                <outlet property="window" destination="j6O-g4-L3Q" id="D6Z-bc-t8l"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -670,35 +669,23 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Spotify Video" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="j6O-g4-L3Q" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="960" height="458"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="960" height="458"/>
+            <rect key="contentRect" x="1816" y="133" width="980" height="472"/>
+            <rect key="screenRect" x="1680" y="-30" width="1920" height="1057"/>
+            <view key="contentView" id="HPb-x7-xj4">
+                <rect key="frame" x="0.0" y="0.0" width="980" height="472"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J6a-t7-z5T">
-                        <rect key="frame" x="0.0" y="13" width="928" height="445"/>
-                        <subviews>
-                            <avPlayerView fixedFrame="YES" controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Ace-tG-AWN">
-                                <rect key="frame" x="0.0" y="0.0" width="928" height="445"/>
-                                <animations/>
-                            </avPlayerView>
-                        </subviews>
+                    <avPlayerView fixedFrame="YES" controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Ace-tG-AWN">
+                        <rect key="frame" x="0.0" y="0.0" width="980" height="472"/>
                         <animations/>
-                        <visibilityPriorities>
-                            <integer value="1000"/>
-                        </visibilityPriorities>
-                        <customSpacing>
-                            <real value="3.4028234663852886e+38"/>
-                        </customSpacing>
-                    </stackView>
+                    </avPlayerView>
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="818" y="402"/>
+            <point key="canvasLocation" x="768" y="369"/>
         </window>
     </objects>
 </document>

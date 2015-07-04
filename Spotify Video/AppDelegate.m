@@ -22,6 +22,9 @@
 @implementation AppDelegate
 // https://www.googleapis.com/youtube/v3/search?part=test&type=video&key=AIzaSyD9sGERE6yX4KvsGGOExAyaAitv7ODOHAY
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=viewCount&q=rick+roll&type=video&key=AIzaSyD9sGERE6yX4KvsGGOExAyaAitv7ODOHAY
+
+// http://stackoverflow.com/questions/8272664/the-most-elegant-way-of-creating-a-fullscreen-overlay-on-mac-os-x-lion
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   // Insert code here to initialize your application
   [self spotifyData];
