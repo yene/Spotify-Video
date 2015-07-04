@@ -12,9 +12,11 @@
 		AE19F2DA1B46DB6F00619D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2D91B46DB6F00619D05 /* Assets.xcassets */; };
 		AE19F2DD1B46DB6F00619D05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2DB1B46DB6F00619D05 /* MainMenu.xib */; };
 		AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */; };
+		D0645B48168E6FC12D0952A0 /* libPods-Spotify Video.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0062832AD7FE4F528AA2332 /* libPods-Spotify Video.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7365AD0ECEDE6BE3020FE39A /* Pods-Spotify Video.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify Video.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spotify Video/Pods-Spotify Video.debug.xcconfig"; sourceTree = "<group>"; };
 		AE19F2D01B46DB6F00619D05 /* Spotify Video.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotify Video.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE19F2D31B46DB6F00619D05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE19F2D41B46DB6F00619D05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		AE19F2DE1B46DB6F00619D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9071491B48402B00C13AD4 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		D0062832AD7FE4F528AA2332 /* libPods-Spotify Video.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify Video.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEE94C8474E6EEDFBF833B6 /* Pods-Spotify Video.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify Video.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotify Video/Pods-Spotify Video.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,18 +36,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */,
+				D0645B48168E6FC12D0952A0 /* libPods-Spotify Video.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42BF14CBE28045D0C680B85A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0062832AD7FE4F528AA2332 /* libPods-Spotify Video.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A89CE345A96EB496356654AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7365AD0ECEDE6BE3020FE39A /* Pods-Spotify Video.debug.xcconfig */,
+				DFEE94C8474E6EEDFBF833B6 /* Pods-Spotify Video.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AE19F2C71B46DB6F00619D05 = {
 			isa = PBXGroup;
 			children = (
 				AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */,
 				AE19F2D21B46DB6F00619D05 /* Spotify Video */,
 				AE19F2D11B46DB6F00619D05 /* Products */,
+				A89CE345A96EB496356654AA /* Pods */,
+				42BF14CBE28045D0C680B85A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE19F2EC1B46DB6F00619D05 /* Build configuration list for PBXNativeTarget "Spotify Video" */;
 			buildPhases = (
+				8A2C52941B5844ABB2FEE350 /* Check Pods Manifest.lock */,
 				AE19F2CC1B46DB6F00619D05 /* Sources */,
 				AE19F2CD1B46DB6F00619D05 /* Frameworks */,
 				AE19F2CE1B46DB6F00619D05 /* Resources */,
+				E5D7E49365B4438E3A5E41FE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,6 +166,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A2C52941B5844ABB2FEE350 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5D7E49365B4438E3A5E41FE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spotify Video/Pods-Spotify Video-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE19F2CC1B46DB6F00619D05 /* Sources */ = {
@@ -246,6 +305,7 @@
 		};
 		AE19F2ED1B46DB6F00619D05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7365AD0ECEDE6BE3020FE39A /* Pods-Spotify Video.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -258,6 +318,7 @@
 		};
 		AE19F2EE1B46DB6F00619D05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFEE94C8474E6EEDFBF833B6 /* Pods-Spotify Video.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
