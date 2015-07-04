@@ -11,6 +11,8 @@
 		AE19F2D81B46DB6F00619D05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19F2D71B46DB6F00619D05 /* main.m */; };
 		AE19F2DA1B46DB6F00619D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2D91B46DB6F00619D05 /* Assets.xcassets */; };
 		AE19F2DD1B46DB6F00619D05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2DB1B46DB6F00619D05 /* MainMenu.xib */; };
+		AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5D91B486450005B254B /* AVKit.framework */; };
+		AEB5B5DC1B4865E1005B254B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */; };
 		AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */; };
 		D0645B48168E6FC12D0952A0 /* libPods-Spotify Video.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0062832AD7FE4F528AA2332 /* libPods-Spotify Video.a */; };
 /* End PBXBuildFile section */
@@ -25,6 +27,8 @@
 		AE19F2DC1B46DB6F00619D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AE19F2DE1B46DB6F00619D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9071491B48402B00C13AD4 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		AEB5B5D91B486450005B254B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		D0062832AD7FE4F528AA2332 /* libPods-Spotify Video.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify Video.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEE94C8474E6EEDFBF833B6 /* Pods-Spotify Video.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify Video.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotify Video/Pods-Spotify Video.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB5B5DC1B4865E1005B254B /* AVFoundation.framework in Frameworks */,
+				AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */,
 				AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */,
 				D0645B48168E6FC12D0952A0 /* libPods-Spotify Video.a in Frameworks */,
 			);
@@ -46,6 +52,9 @@
 		42BF14CBE28045D0C680B85A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */,
+				AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */,
+				AEB5B5D91B486450005B254B /* AVKit.framework */,
 				D0062832AD7FE4F528AA2332 /* libPods-Spotify Video.a */,
 			);
 			name = Frameworks;
@@ -63,7 +72,6 @@
 		AE19F2C71B46DB6F00619D05 = {
 			isa = PBXGroup;
 			children = (
-				AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */,
 				AE19F2D21B46DB6F00619D05 /* Spotify Video */,
 				AE19F2D11B46DB6F00619D05 /* Products */,
 				A89CE345A96EB496356654AA /* Pods */,
@@ -311,6 +319,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Spotify Video/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickweiss.Spotify-Video";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -324,6 +333,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Spotify Video/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickweiss.Spotify-Video";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
