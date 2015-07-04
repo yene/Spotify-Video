@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <ScriptingBridge/SBApplication.h>
+#import "Spotify.h"
+
 
 @interface AppDelegate ()
 
@@ -25,6 +28,21 @@
 }
 
 - (void)spotifyData {
+  NSArray *selectedApps = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.spotify.client"];
+  if ([selectedApps count] == 0) {
+    NSLog(@"Spotify not running");
+    return;
+  }
+  
+  SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+  double bla = spotify.playerPosition;
+  if (spotify.playerState == SpotifyEPlSPlaying) {
+    SpotifyTrack *track = spotify.currentTrack;
+    NSString *songName = track.name;
+  }
+  
+  
+  return;
   NSString* path = [[NSBundle mainBundle] pathForResource:@"spotify" ofType:@"scpt"];
   NSURL* url = [NSURL fileURLWithPath:path];
   NSDictionary* errors;
