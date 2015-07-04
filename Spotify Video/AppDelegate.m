@@ -25,23 +25,32 @@
 
 // http://stackoverflow.com/questions/8272664/the-most-elegant-way-of-creating-a-fullscreen-overlay-on-mac-os-x-lion
 
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   // Insert code here to initialize your application
   [self spotifyData];
+  
+  [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.spotify.client.PlaybackStateChanged" object:nil];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
   // Insert code here to tear down your application
 }
 
+- (void)updateTrackInfoFromSpotify:(NSNotification *)notification {
+// https://gist.github.com/kwylez/5337918
+}
+
 - (void)spotifyData {
-  NSArray *selectedApps = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.spotify.client"];
-  if ([selectedApps count] == 0) {
+  
+  SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+  if (spotify.isRunning) {
+    NSLog(@"spotify is running");
+  } else {
     NSLog(@"Spotify not running");
     return;
   }
   
-  SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
   if (spotify.playerState == SpotifyEPlSStopped) {
     NSLog(@"Spotify is stopped");
     return;
