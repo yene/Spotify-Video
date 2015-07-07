@@ -65,7 +65,7 @@
 - (NSString *)videoIDforSong:(NSString *)songDetails {
   NSString *apiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"apiKey"];
   songDetails = [songDetails stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-  NSString *url = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=viewCount&type=video&key=%@&q=%@", apiKey, songDetails];
+  NSString *url = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&videoDefinition=high&order=viewCount&type=video&key=%@&q=%@", apiKey, songDetails];
   NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
   NSURLResponse* response = nil;
   NSError *error = nil;

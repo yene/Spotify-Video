@@ -122,24 +122,30 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="pZY-2d-Mcv">
+        <window title="Spotify Video" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="pZY-2d-Mcv">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="1876" y="177" width="981" height="551"/>
+            <rect key="contentRect" x="1680" y="134" width="1280" height="720"/>
             <rect key="screenRect" x="1680" y="-30" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="1280" height="720"/>
             <view key="contentView" id="cCB-s1-3DX">
-                <rect key="frame" x="0.0" y="0.0" width="981" height="551"/>
+                <rect key="frame" x="0.0" y="0.0" width="1280" height="720"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <avPlayerView fixedFrame="YES" controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="ElB-Fv-IRj">
-                        <rect key="frame" x="56" y="34" width="980" height="472"/>
+                    <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="ElB-Fv-IRj">
+                        <rect key="frame" x="0.0" y="0.0" width="1280" height="720"/>
                         <animations/>
                     </avPlayerView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="ElB-Fv-IRj" firstAttribute="leading" secondItem="cCB-s1-3DX" secondAttribute="leading" id="1bD-ys-Y31"/>
+                    <constraint firstAttribute="bottom" secondItem="ElB-Fv-IRj" secondAttribute="bottom" id="6pf-zA-dwW"/>
+                    <constraint firstAttribute="trailing" secondItem="ElB-Fv-IRj" secondAttribute="trailing" id="W1M-dc-ACU"/>
+                    <constraint firstItem="ElB-Fv-IRj" firstAttribute="top" secondItem="cCB-s1-3DX" secondAttribute="top" id="xcK-M9-1Pd"/>
+                </constraints>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="944.5" y="497.5"/>
+            <point key="canvasLocation" x="944" y="497"/>
         </window>
     </objects>
 </document>
