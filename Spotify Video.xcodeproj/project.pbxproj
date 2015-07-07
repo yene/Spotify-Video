@@ -27,7 +27,6 @@
 		AE19F2DC1B46DB6F00619D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AE19F2DE1B46DB6F00619D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9071491B48402B00C13AD4 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
-		AEAF48831B4C28B70053D995 /* vlc play youtube.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "vlc play youtube.scpt"; sourceTree = "<group>"; };
 		AEB5B5D91B486450005B254B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
@@ -91,7 +90,6 @@
 		AE19F2D21B46DB6F00619D05 /* Spotify Video */ = {
 			isa = PBXGroup;
 			children = (
-				AEAF48831B4C28B70053D995 /* vlc play youtube.scpt */,
 				AE9071491B48402B00C13AD4 /* Spotify.h */,
 				AE19F2D31B46DB6F00619D05 /* AppDelegate.h */,
 				AE19F2D41B46DB6F00619D05 /* AppDelegate.m */,

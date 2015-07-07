@@ -28,8 +28,7 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  [self playURLinVLC2: @"http://localhost:8000/?q=rick+astley"];
-  
+  [self startVLC];
   [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.spotify.client.PlaybackStateChanged" object:nil];
 }
 
@@ -47,27 +46,31 @@
   
   if ([playerState isEqualToString:@"Playing"])  {
     if ([position intValue] == 0) {
-      NSString *videoID = [self videoIDforSong:songDetails];
-      [self playYoutubeVideo:videoID];
+      songDetails = [songDetails stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+      [self playURLinVLC2: songDetails];
+      //NSString *videoID = [self videoIDforSong:songDetails];
+      //[self playYoutubeVideo:videoID];
       
       /* tell VLC to mute and play localhost:8000/?q=rick+astley */
     } else {
       // todo: check if same video id before resume
-      AVPlayer *player = self.playerView.player;
-      [player play];
+      //AVPlayer *player = self.playerView.player;
+      //[player play];
+      [self playVLC];
     }
   } else if ([playerState isEqualToString:@"Paused"])  {
-    AVPlayer *player = self.playerView.player;
-    [player pause];
+    //AVPlayer *player = self.playerView.player;
+    //[player pause];
+    [self pauseVLC];
   } else if ([playerState isEqualToString:@"Stopped"])  {
-    
+    [self quitVLC];
   } else {
     NSLog(@"new state %@", playerState);
   }
 }
 
 - (NSString *)videoIDforSong:(NSString *)songDetails {
-  NSString *apiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"apiKey"]; // old key: AIzaSyD9sGERE6yX4KvsGGOExAyaAitv7ODOHAY
+  NSString *apiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"apiKey"];
   songDetails = [songDetails stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
   NSString *url = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=viewCount&type=video&key=%@&q=%@", apiKey, songDetails];
   NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -111,20 +114,50 @@
   //Handle error
 }
 
-- (void)playURLinVLC2:(NSString *)url {
+- (void)startVLC {
+  NSString * st = @"tell application \"VLC\" \n"
+                   "activate \n"
+                    "set audio volume to 0 \n"
+                   "end tell";
+  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:st];
+  [script executeAndReturnError:nil];
+}
 
+- (void)playURLinVLC2:(NSString *)query {
   NSString * st = [NSString stringWithFormat:@"tell application \"VLC\" \n"
   "activate \n"
-  "OpenURL \"%@\" \n"
+  "OpenURL \"http://youtube.yannickweiss.com/?q=%@\" \n"
   "if not fullscreen mode then \n"
   "fullscreen \n"
   "end if \n"
   "set audio volume to 0 \n"
-                   "end tell", url];
+                   "end tell", query];
   NSAppleScript *script = [[NSAppleScript alloc] initWithSource:st];
   [script executeAndReturnError:nil];
-  
+}
 
+- (void)pauseVLC {
+  NSString * st = @"tell application \"VLC\" \n"
+                   "if playing then \n"
+                   "play \n"
+                   "end if \n"
+                   "end tell";
+  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:st];
+  [script executeAndReturnError:nil];
+}
+
+- (void)playVLC {
+  NSString * st = @"tell application \"VLC\" \n"
+                   "play \n"
+                   "end tell";
+  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:st];
+  [script executeAndReturnError:nil];
+}
+
+- (void)quitVLC {
+  NSString * st = @"tell application \"VLC\" to quit \n";
+  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:st];
+  [script executeAndReturnError:nil];
 }
 
 - (void)spotifyData {
