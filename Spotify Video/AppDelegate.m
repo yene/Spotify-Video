@@ -88,19 +88,35 @@
 - (void)playYoutubeVideo:(NSString *)videoID {
   [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:videoID completionHandler:^(XCDYouTubeVideo *video, NSError *error) {
     if (video) {
+      if (self.playerView.player) {
+        [self.playerView.player removeObserver:self forKeyPath:@"status"];
+      }
+      
       NSDictionary *streamURLs = video.streamURLs;
       NSURL *url = streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?: streamURLs[@(XCDYouTubeVideoQualityHD720)] ?: streamURLs[@(XCDYouTubeVideoQualityMedium360)] ?: streamURLs[@(XCDYouTubeVideoQualitySmall240)];
       AVPlayer *player = [AVPlayer playerWithURL:url];
+      
+      [player addObserver:self forKeyPath:@"status" options:0 context:nil];
       player.volume = 0;
       self.playerView.player = player;
       [player play];
-      NSTimeInterval diff = [startTime timeIntervalSinceNow] * -1;
-      NSDate *seekDate = [NSDate dateWithTimeIntervalSinceNow:diff];
-      [player seekToDate:seekDate];
     } else {
       [[NSAlert alertWithError:error] runModal];
     }
   }];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary *)change context:(void *)context {
+  AVPlayer *player = self.playerView.player;
+  if (object == player && [keyPath isEqualToString:@"status"]) {
+    if (player.status == AVPlayerStatusReadyToPlay) {
+      NSTimeInterval diff = [startTime timeIntervalSinceNow] * -1;
+      CMTime t = player.currentTime;
+      t.value += diff;
+      [player seekToTime:t];
+    }
+  }
 }
 
 - (void)spotifyData {
