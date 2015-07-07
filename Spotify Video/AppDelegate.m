@@ -48,8 +48,8 @@
   if ([playerState isEqualToString:@"Playing"])  {
     if ([position intValue] == 0) {
       NSLog(@"search song: %@", songDetails);
-      NSString *videoID = [self videoIDforSong:songDetails];
-      [self playYoutubeVideo:videoID];
+      [self videoIDforSong:songDetails];
+      
     } else {
       [player play];
     }
@@ -62,27 +62,30 @@
   }
 }
 
-- (NSString *)videoIDforSong:(NSString *)songDetails {
+- (void)videoIDforSong:(NSString *)songDetails {
   NSString *apiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"apiKey"];
   songDetails = [songDetails stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
   NSString *url = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&videoDefinition=high&order=viewCount&type=video&key=%@&q=%@", apiKey, songDetails];
-  NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-  NSURLResponse* response = nil;
-  NSError *error = nil;
-  NSData* data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
-  
-  // TODO: more error checking like http://stackoverflow.com/a/7794561/279890
-  NSDictionary *results = [NSJSONSerialization
-               JSONObjectWithData:data
-               options:0
-               error:&error];
-  NSArray *items = [results objectForKey:@"items"];
-  if ([items count] == 0) {
-    NSLog(@"no video found");
-    return @"GqkWnriHGUc";
-  }
-  
-  return [items[0] valueForKeyPath:@"id.videoId"];
+  NSURLSession *session = [NSURLSession sharedSession];
+  [[session dataTaskWithURL:[NSURL URLWithString:url]
+          completionHandler:^(NSData *data,
+                              NSURLResponse *response,
+                              NSError *error) {
+    NSDictionary *results = [NSJSONSerialization
+                             JSONObjectWithData:data
+                             options:0
+                             error:&error];
+    NSArray *items = [results objectForKey:@"items"];
+    NSString *videoID = @"GqkWnriHGUc";
+    if ([items count] == 0) {
+      NSLog(@"no video found");
+    } else {
+      videoID = [items[0] valueForKeyPath:@"id.videoId"];
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [self playYoutubeVideo:videoID];
+    });
+  }] resume];
 }
 
 - (void)playYoutubeVideo:(NSString *)videoID {
