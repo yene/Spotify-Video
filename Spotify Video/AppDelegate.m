@@ -49,14 +49,23 @@
     if ([position intValue] == 0) {
       NSLog(@"search song: %@", songDetails);
       [self videoIDforSong:songDetails];
-      
     } else {
-      [player play];
+      if (player) {
+        [player play];
+      } else {
+        // first time start
+        [self videoIDforSong:songDetails];
+      }
+      
     }
   } else if ([playerState isEqualToString:@"Paused"])  {
-    [player pause];
+    if (player) {
+      [player pause];
+    }
   } else if ([playerState isEqualToString:@"Stopped"])  {
-    [player pause];
+    if (player) {
+      [player pause];
+    }
   } else {
     NSLog(@"new state %@", playerState);
   }
