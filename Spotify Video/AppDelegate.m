@@ -119,7 +119,6 @@
   
   SpotifyTrack *track = spotify.currentTrack;
   NSString *songDetails = [NSString stringWithFormat:@"%@ %@", track.name, track.artist];
-  
 }
 
 @end
