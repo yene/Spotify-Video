@@ -45,6 +45,8 @@
   NSString *songDetails = [NSString stringWithFormat:@"%@ %@", name, artist];
   AVPlayer *player = self.playerView.player;
   
+
+  
   if ([playerState isEqualToString:@"Playing"])  {
     if ([position intValue] == 0) {
       NSLog(@"search song: %@", songDetails);
@@ -54,6 +56,8 @@
         [player play];
       } else {
         // first time start
+        int pos = ([position intValue] / 1000) * -1;
+        startTime = [startTime dateByAddingTimeInterval:pos];
         [self videoIDforSong:songDetails];
       }
       
@@ -125,7 +129,7 @@
     if (player.status == AVPlayerStatusReadyToPlay) {
       NSTimeInterval diff = [startTime timeIntervalSinceNow] * -1;
       CMTime t = player.currentTime;
-      t.value += diff;
+      t.value = diff;
       [player seekToTime:t];
     }
   }
