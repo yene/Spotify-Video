@@ -119,22 +119,4 @@
   }
 }
 
-- (void)spotifyData {
-  SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
-  if (spotify.isRunning) {
-    NSLog(@"spotify is running");
-  } else {
-    NSLog(@"Spotify not running");
-    return;
-  }
-  
-  if (spotify.playerState == SpotifyEPlSStopped) {
-    NSLog(@"Spotify is stopped");
-    return;
-  }
-  
-  SpotifyTrack *track = spotify.currentTrack;
-  NSString *songDetails = [NSString stringWithFormat:@"%@ %@", track.name, track.artist];
-}
-
 @end
