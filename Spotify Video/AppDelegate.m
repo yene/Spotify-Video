@@ -23,6 +23,7 @@
  * example implementation: https://gist.github.com/kwylez/5337918
  * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
  * add a bit delay to the video so it matches spotify
+ * toggle play pause in spotify to match the video with song
  */
 
 @implementation AppDelegate {
@@ -44,8 +45,6 @@
   NSNumber *position = [notification.userInfo valueForKey:@"Playback Position"];
   NSString *songDetails = [NSString stringWithFormat:@"%@ %@", name, artist];
   AVPlayer *player = self.playerView.player;
-  
-
   
   if ([playerState isEqualToString:@"Playing"])  {
     if ([position intValue] == 0) {
@@ -76,24 +75,16 @@
 }
 
 - (void)videoIDforSong:(NSString *)songDetails {
-  NSString *apiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"apiKey"];
   songDetails = [songDetails stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-  NSString *url = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&videoDefinition=high&order=viewCount&type=video&key=%@&q=%@", apiKey, songDetails];
+  NSString *url = [NSString stringWithFormat:@"http://youtube.yannickweiss.com/?q=%@", songDetails];
   NSURLSession *session = [NSURLSession sharedSession];
-  [[session dataTaskWithURL:[NSURL URLWithString:url]
-          completionHandler:^(NSData *data,
-                              NSURLResponse *response,
-                              NSError *error) {
-    NSDictionary *results = [NSJSONSerialization
-                             JSONObjectWithData:data
-                             options:0
-                             error:&error];
-    NSArray *items = [results objectForKey:@"items"];
+  [[session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     NSString *videoID = @"GqkWnriHGUc";
-    if ([items count] == 0) {
-      NSLog(@"no video found");
-    } else {
-      videoID = [items[0] valueForKeyPath:@"id.videoId"];
+    NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+    if (!error && statusCode == 200) {
+      NSURL *lastURL = [response URL];
+      NSString *url = [lastURL query];
+      videoID = [[url componentsSeparatedByString:@"="] lastObject];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
       [self playYoutubeVideo:videoID];
