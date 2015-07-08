@@ -24,6 +24,7 @@
  * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
  * add a bit delay to the video so it matches spotify
  * toggle play pause in spotify to match the video with song
+ * TODO: still a bit delay
  */
 
 @implementation AppDelegate {
