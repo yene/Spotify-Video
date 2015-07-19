@@ -19,23 +19,18 @@
 @property (weak) IBOutlet NSWindow *window;
 @end
 
-/* Notes
- * example implementation: https://gist.github.com/kwylez/5337918
- * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
- * add a bit delay to the video so it matches spotify
- * toggle play pause in spotify to match the video with song
- * TODO: still a bit delay
- */
-
 @implementation AppDelegate {
   NSDate *startTime;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.spotify.client.PlaybackStateChanged" object:nil];
+  [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.apple.iTunes.playerInfo" object:nil];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
+  [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.apple.iTunes.playerInfo" object:nil];
+  [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.spotify.client.PlaybackStateChanged" object:nil];
 }
 
 - (void)updateTrackInfoFromSpotify:(NSNotification *)notification {
