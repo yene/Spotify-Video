@@ -1,9 +1,10 @@
 # Spotify Video
-An OSX app that watches Spotify and plays a matching youtube video.
+An OSX app that plays the first youtube video that matches the iTunes/Spotify song.
 
 ![screenshot](http://i.imgur.com/dsyslie.png)
 
-# Notes
+## Notes
+* It uses [Sparkle for Github](https://github.com/yene/Sparkle-for-Github) to update.
 * Example implementation taken from https://gist.github.com/kwylez/5337918
 * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 * TODO: video is not perfectly in sync with the song
@@ -11,7 +12,7 @@ An OSX app that watches Spotify and plays a matching youtube video.
 * TODO: let the user skip to the next youtube video
 * TODO: add shazam support
 
-# How to release update
+## How to release update
 A quick guide for me:
 
 * Increase Version
