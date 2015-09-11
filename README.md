@@ -9,3 +9,4 @@ An OSX app that watches Spotify and plays a matching youtube video.
 * TODO: video is not perfectly in sync with the song
 * TODO: get the correct iTunes position form http://blog.corywiles.com/now-playing-with-spotify-and-itunes
 * TODO: let the user skip to the next youtube video
+* TODO: add shazam support
