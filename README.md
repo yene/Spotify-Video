@@ -6,11 +6,16 @@ An OSX app that plays the first youtube video that matches the current iTunes/Sp
 ## Notes
 * It uses [Sparkle for Github](https://github.com/yene/Sparkle-for-Github) to update.
 * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-* TODO: video is not perfectly in sync with the song
-* TODO: let the user skip to the next youtube video
-* TODO: add shazam support
-* TODO: display a message at the start in the poster image of the video
-* TODO: new icon
+
+## Todo
+* video should loop
+* video is not perfectly in sync with the song
+* let the user skip to the next youtube video
+* add shazam support
+* display a message at the start in the poster image of the video (waiting for spotify itunes + spinner)
+* new icon
+* test with spotify free and the ads
+
 
 ## Credits and Material
 * Example implementation taken from https://gist.github.com/kwylez/5337918

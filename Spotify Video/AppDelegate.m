@@ -33,6 +33,12 @@
   SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
   if ([spotify isRunning]) {
     NSLog(@"spotify is running");
+    if (spotify.playerState == SpotifyEPlSPlaying) {
+      NSString *artist = [[spotify currentTrack] artist];
+      NSString *name = [[spotify currentTrack] name];
+      double position = [spotify playerPosition];
+      NSString *songDetails = [NSString stringWithFormat:@"%@ %@", name, artist];
+    }
   }
   
   [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.spotify.client.PlaybackStateChanged" object:nil];
@@ -43,6 +49,8 @@
   [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.apple.iTunes.playerInfo" object:nil];
   [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.spotify.client.PlaybackStateChanged" object:nil];
 }
+
+
 
 - (void)updateTrackInfoFromSpotify:(NSNotification *)notification {
   startTime = [NSDate date];
