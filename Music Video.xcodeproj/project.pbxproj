@@ -57,6 +57,7 @@
 		AEC5A1BF1BA305FF004EDFF5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = "/Users/yene/Developer/OS X/Spotify Video/Spotify Video/XCDYouTubeKit.framework"; sourceTree = "<absolute>"; };
 		AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		AEF626131C104AFC00A6E007 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 		AE19F2D21B46DB6F00619D05 /* Spotify Video */ = {
 			isa = PBXGroup;
 			children = (
+				AEF626131C104AFC00A6E007 /* iTunes.h */,
 				AE9071491B48402B00C13AD4 /* Spotify.h */,
 				AE19F2D31B46DB6F00619D05 /* AppDelegate.h */,
 				AE19F2D41B46DB6F00619D05 /* AppDelegate.m */,

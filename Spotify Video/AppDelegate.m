@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <ScriptingBridge/SBApplication.h>
 #import "Spotify.h"
+#import "iTunes.h"
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVPlayer.h>
 #import <XCDYouTubeKit/XCDYouTubeKit.h>
@@ -24,6 +25,16 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+  iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+  if ([iTunes isRunning]) {
+    NSLog(@"itunes is running");
+  }
+  
+  SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+  if ([spotify isRunning]) {
+    NSLog(@"spotify is running");
+  }
+  
   [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.spotify.client.PlaybackStateChanged" object:nil];
   [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.apple.iTunes.playerInfo" object:nil];
 }

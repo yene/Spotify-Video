@@ -1,18 +1,25 @@
-# Spotify Video
-An OSX app that plays the first youtube video that matches the iTunes/Spotify song.
+# Music Video
+An OSX app that plays the first youtube video that matches the current iTunes/Spotify song.
 
 ![screenshot](http://i.imgur.com/dsyslie.png)
 
 ## Notes
 * It uses [Sparkle for Github](https://github.com/yene/Sparkle-for-Github) to update.
-* Example implementation taken from https://gist.github.com/kwylez/5337918
 * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 * TODO: video is not perfectly in sync with the song
-* TODO: get the correct iTunes position form http://blog.corywiles.com/now-playing-with-spotify-and-itunes
 * TODO: let the user skip to the next youtube video
 * TODO: add shazam support
+* TODO: display a message at the start in the poster image of the video
+* TODO: new icon
 
-## How to release update
+## Credits and Material
+* Example implementation taken from https://gist.github.com/kwylez/5337918
+* http://blog.corywiles.com/now-playing-with-spotify-and-itunes
+
+## Getting Spotify and iTunes bridge headers
+* `sdef /Applications/iTunes.app | sdp -fh --basename iTunes`
+
+## How to release an update
 A quick guide for me:
 
 * Increase Version
