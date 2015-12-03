@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Spotify Video.xcodeproj">
+      location = "self:/Users/yene/Developer/OS X/Spotify Video/Music Video.xcodeproj">
    </FileRef>
 </Workspace>

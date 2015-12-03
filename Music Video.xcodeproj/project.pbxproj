@@ -11,15 +11,16 @@
 		AE19F2D81B46DB6F00619D05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19F2D71B46DB6F00619D05 /* main.m */; };
 		AE19F2DA1B46DB6F00619D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2D91B46DB6F00619D05 /* Assets.xcassets */; };
 		AE19F2DD1B46DB6F00619D05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2DB1B46DB6F00619D05 /* MainMenu.xib */; };
-		AE2140A01BA211C300D7593B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE21409F1BA211C300D7593B /* Sparkle.framework */; settings = {ASSET_TAGS = (); }; };
+		AE2140A01BA211C300D7593B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE21409F1BA211C300D7593B /* Sparkle.framework */; };
 		AE2140A21BA211EB00D7593B /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE21409F1BA211C300D7593B /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEA5C40D1BA713D200B9A676 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */; };
+		AEA5C40E1BA713D600B9A676 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */; };
+		AEA5C40F1BA713D600B9A676 /* XCDYouTubeKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5D91B486450005B254B /* AVKit.framework */; };
 		AEB5B5DC1B4865E1005B254B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */; };
 		AEC5A1BB1BA2F9BF004EDFF5 /* MMMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */; };
 		AEC5A1BC1BA2F9BF004EDFF5 /* MMMarkdown.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AEC5A1C11BA30703004EDFF5 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */; settings = {ASSET_TAGS = (); }; };
-		AEC5A1C41BA30765004EDFF5 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */; };
-		AEC5A1C51BA30765004EDFF5 /* XCDYouTubeKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEC5A1C11BA30703004EDFF5 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */; };
 		AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +32,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				AE2140A21BA211EB00D7593B /* Sparkle.framework in Copy Frameworks */,
-				AEC5A1C51BA30765004EDFF5 /* XCDYouTubeKit.framework in Copy Frameworks */,
+				AEA5C40F1BA713D600B9A676 /* XCDYouTubeKit.framework in Copy Frameworks */,
 				AEC5A1BC1BA2F9BF004EDFF5 /* MMMarkdown.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -40,7 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AE19F2D01B46DB6F00619D05 /* Spotify Video.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotify Video.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE19F2D01B46DB6F00619D05 /* Music Video.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Video.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE19F2D31B46DB6F00619D05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE19F2D41B46DB6F00619D05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AE19F2D71B46DB6F00619D05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,11 +50,12 @@
 		AE19F2DE1B46DB6F00619D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE21409F1BA211C300D7593B /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Spotify Video/Sparkle.framework"; sourceTree = "<group>"; };
 		AE9071491B48402B00C13AD4 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = "Spotify Video/XCDYouTubeKit.framework"; sourceTree = "<group>"; };
 		AEB5B5D91B486450005B254B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMMarkdown.framework; path = "Spotify Video/MMMarkdown.framework"; sourceTree = "<group>"; };
 		AEC5A1BF1BA305FF004EDFF5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = "Spotify Video/XCDYouTubeKit.framework"; sourceTree = "<group>"; };
+		AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = "/Users/yene/Developer/OS X/Spotify Video/Spotify Video/XCDYouTubeKit.framework"; sourceTree = "<absolute>"; };
 		AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -64,11 +66,12 @@
 			files = (
 				AEB5B5DC1B4865E1005B254B /* AVFoundation.framework in Frameworks */,
 				AEC5A1C11BA30703004EDFF5 /* XCDYouTubeKit.framework in Frameworks */,
-				AEC5A1C41BA30765004EDFF5 /* XCDYouTubeKit.framework in Frameworks */,
+				AEA5C40D1BA713D200B9A676 /* XCDYouTubeKit.framework in Frameworks */,
 				AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */,
 				AEC5A1BB1BA2F9BF004EDFF5 /* MMMarkdown.framework in Frameworks */,
 				AE2140A01BA211C300D7593B /* Sparkle.framework in Frameworks */,
 				AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */,
+				AEA5C40E1BA713D600B9A676 /* XCDYouTubeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +81,7 @@
 		42BF14CBE28045D0C680B85A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */,
+				AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */,
 				AE21409F1BA211C300D7593B /* Sparkle.framework */,
 				AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */,
 				AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */,
@@ -101,7 +104,7 @@
 		AE19F2D11B46DB6F00619D05 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE19F2D01B46DB6F00619D05 /* Spotify Video.app */,
+				AE19F2D01B46DB6F00619D05 /* Music Video.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AE19F2CF1B46DB6F00619D05 /* Spotify Video */ = {
+		AE19F2CF1B46DB6F00619D05 /* Music Video */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE19F2EC1B46DB6F00619D05 /* Build configuration list for PBXNativeTarget "Spotify Video" */;
+			buildConfigurationList = AE19F2EC1B46DB6F00619D05 /* Build configuration list for PBXNativeTarget "Music Video" */;
 			buildPhases = (
 				AE19F2CC1B46DB6F00619D05 /* Sources */,
 				AE19F2CD1B46DB6F00619D05 /* Frameworks */,
@@ -144,9 +147,9 @@
 			);
 			dependencies = (
 			);
-			name = "Spotify Video";
+			name = "Music Video";
 			productName = "Spotify Video";
-			productReference = AE19F2D01B46DB6F00619D05 /* Spotify Video.app */;
+			productReference = AE19F2D01B46DB6F00619D05 /* Music Video.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -164,7 +167,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AE19F2CB1B46DB6F00619D05 /* Build configuration list for PBXProject "Spotify Video" */;
+			buildConfigurationList = AE19F2CB1B46DB6F00619D05 /* Build configuration list for PBXProject "Music Video" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -177,7 +180,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AE19F2CF1B46DB6F00619D05 /* Spotify Video */,
+				AE19F2CF1B46DB6F00619D05 /* Music Video */,
 			);
 		};
 /* End PBXProject section */
@@ -305,12 +308,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Spotify",
-					Video,
+					"$(PROJECT_DIR)/Spotify\\ Video",
 				);
 				INFOPLIST_FILE = "Spotify Video/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickweiss.Spotify-Video";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickweiss.Music-Video";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -323,12 +325,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Spotify",
-					Video,
+					"$(PROJECT_DIR)/Spotify\\ Video",
 				);
 				INFOPLIST_FILE = "Spotify Video/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickweiss.Spotify-Video";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickweiss.Music-Video";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -336,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AE19F2CB1B46DB6F00619D05 /* Build configuration list for PBXProject "Spotify Video" */ = {
+		AE19F2CB1B46DB6F00619D05 /* Build configuration list for PBXProject "Music Video" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE19F2EA1B46DB6F00619D05 /* Debug */,
@@ -345,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE19F2EC1B46DB6F00619D05 /* Build configuration list for PBXNativeTarget "Spotify Video" */ = {
+		AE19F2EC1B46DB6F00619D05 /* Build configuration list for PBXNativeTarget "Music Video" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE19F2ED1B46DB6F00619D05 /* Debug */,
