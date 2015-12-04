@@ -28,6 +28,13 @@
   iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
   if ([iTunes isRunning]) {
     NSLog(@"itunes is running");
+    if (iTunes.playerState == iTunesEPlSPlaying) {
+      NSString *artist = [[iTunes currentTrack] artist];
+      NSString *name = [[iTunes currentTrack] name];
+      double position = [iTunes playerPosition];
+      NSString *songDetails = [NSString stringWithFormat:@"%@ %@", name, artist];
+    }
+    
   }
   
   SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
