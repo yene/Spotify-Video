@@ -25,31 +25,39 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+  NSDistributedNotificationCenter *center = [NSDistributedNotificationCenter defaultCenter];
+  
+  
   iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
   if ([iTunes isRunning]) {
-    NSLog(@"itunes is running");
+    [center addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.apple.iTunes.playerInfo" object:nil];
+
     if (iTunes.playerState == iTunesEPlSPlaying) {
       NSString *artist = [[iTunes currentTrack] artist];
       NSString *name = [[iTunes currentTrack] name];
       double position = [iTunes playerPosition];
       NSString *songDetails = [NSString stringWithFormat:@"%@ %@", name, artist];
+      [self playSong:songDetails];
+      return;
     }
     
   }
   
   SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
   if ([spotify isRunning]) {
-    NSLog(@"spotify is running");
+    [center addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.spotify.client.PlaybackStateChanged" object:nil];
+    
     if (spotify.playerState == SpotifyEPlSPlaying) {
       NSString *artist = [[spotify currentTrack] artist];
       NSString *name = [[spotify currentTrack] name];
       double position = [spotify playerPosition];
       NSString *songDetails = [NSString stringWithFormat:@"%@ %@", name, artist];
+      [self playSong:songDetails];
+      return;
     }
   }
   
-  [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.spotify.client.PlaybackStateChanged" object:nil];
-  [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.apple.iTunes.playerInfo" object:nil];
+  
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -71,7 +79,7 @@
   if ([playerState isEqualToString:@"Playing"])  {
     if ([position intValue] == 0) {
       NSLog(@"search song: %@", songDetails);
-      [self videoIDforSong:songDetails];
+      [self playSong:songDetails];
     } else {
       if (player) {
         [player play];
@@ -79,7 +87,7 @@
         // first time start
         int pos = ([position intValue] / 1000) * -1;
         startTime = [startTime dateByAddingTimeInterval:pos];
-        [self videoIDforSong:songDetails];
+        [self playSong:songDetails];
       }
       
     }
@@ -96,7 +104,7 @@
   }
 }
 
-- (void)videoIDforSong:(NSString *)songDetails {
+- (void)playSong:(NSString *)songDetails {
   songDetails = [songDetails stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
   NSString *url = [NSString stringWithFormat:@"http://youtube.yannickweiss.com/?q=%@", songDetails];
   NSURLSession *session = [NSURLSession sharedSession];
