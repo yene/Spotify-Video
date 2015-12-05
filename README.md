@@ -11,16 +11,12 @@ An OSX app that plays the first youtube video that matches the current iTunes/Sp
 * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 ## Todo
-* bypass restricted playback, example https://www.youtube.com/watch?v=YQHsXMglC9A
-* video should loop
-* video is not perfectly in sync with the song
+* check if the event listeners are still bound to the previous video
 * let the user skip to the next youtube video
-* add shazam support
 * display a message at the start in the poster image of the video (waiting for spotify itunes + spinner)
-* new icon
-* test with spotify free and the ads
 * add progress indicator and go blank between loading videos -> maybe fade to black
-* add tolerance to seeking - seekToTime:toleranceBefore:toleranceAfter:
+* test with spotify free and the ads
+* new artwork and icon
 
 ## Credits and Material
 * Example implementation taken from https://gist.github.com/kwylez/5337918

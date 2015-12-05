@@ -101,22 +101,13 @@
                 </menuItem>
                 <menuItem title="Help" id="wpr-3q-Mcd">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
-                        <items>
-                            <menuItem title="Music Video Help" keyEquivalent="?" id="FKE-Sm-Kum">
-                                <connections>
-                                    <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
                 </menuItem>
             </items>
         </menu>
         <window title="Music Video" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="pZY-2d-Mcv">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
-            <rect key="contentRect" x="1680" y="134" width="1280" height="720"/>
+            <rect key="contentRect" x="400" y="134" width="1280" height="720"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <value key="minSize" type="size" width="1280" height="720"/>
             <view key="contentView" id="cCB-s1-3DX">

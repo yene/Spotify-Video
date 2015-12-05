@@ -12,6 +12,7 @@
 #import "iTunes.h"
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVPlayer.h>
+#import <AVFoundation/AVPlayerItem.h>
 #import <XCDYouTubeKit/XCDYouTubeKit.h>
 
 
@@ -163,6 +164,14 @@
       AVPlayer *player = [AVPlayer playerWithURL:url];
       
       [player addObserver:self forKeyPath:@"status" options:0 context:nil];
+      player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+      
+      [[NSNotificationCenter defaultCenter] addObserver:self
+                                               selector:@selector(playerItemDidReachEnd:)
+                                                   name:AVPlayerItemDidPlayToEndTimeNotification
+                                                 object:[player currentItem]];
+      
+      
       player.volume = 0;
       self.playerView.player = player;
       [player play];
@@ -184,6 +193,11 @@
       [player seekToTime:t];
     }
   }
+}
+
+- (void)playerItemDidReachEnd:(NSNotification *)notification {
+  AVPlayerItem *p = [notification object];
+  [p seekToTime:kCMTimeZero];
 }
 
 @end
