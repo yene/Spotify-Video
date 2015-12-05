@@ -3,11 +3,15 @@ An OSX app that plays the first youtube video that matches the current iTunes/Sp
 
 ![screenshot](http://i.imgur.com/dsyslie.png)
 
+## Setup
+* Install dependencies `carthage update --platform Mac`
+
 ## Notes
 * It uses [Sparkle for Github](https://github.com/yene/Sparkle-for-Github) to update.
 * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 ## Todo
+* bypass restricted playback, example https://www.youtube.com/watch?v=YQHsXMglC9A
 * video should loop
 * video is not perfectly in sync with the song
 * let the user skip to the next youtube video
@@ -15,7 +19,8 @@ An OSX app that plays the first youtube video that matches the current iTunes/Sp
 * display a message at the start in the poster image of the video (waiting for spotify itunes + spinner)
 * new icon
 * test with spotify free and the ads
-
+* add progress indicator and go blank between loading videos -> maybe fade to black
+* add tolerance to seeking - seekToTime:toleranceBefore:toleranceAfter:
 
 ## Credits and Material
 * Example implementation taken from https://gist.github.com/kwylez/5337918
@@ -33,3 +38,12 @@ A quick guide for me:
 * In Xcode archive Version and Export a Developer ID-signed Application
 * Zip the exported application
 * On github create a new release with the same version (and add a v in front like v2.0)
+
+# Notes on interaction with Shazam
+Shazam does not publish the current song to notification. Report this to the devs.
+
+# Notes on interaction with iTunes
+
+# Notes on interaction with Spotify
+* Only sends notification when sound changes, play, pause.
+* Does not send notification when a looping track ends. -> send bug report
