@@ -13,14 +13,12 @@
 		AE19F2DD1B46DB6F00619D05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2DB1B46DB6F00619D05 /* MainMenu.xib */; };
 		AE2140A01BA211C300D7593B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE21409F1BA211C300D7593B /* Sparkle.framework */; };
 		AE2140A21BA211EB00D7593B /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE21409F1BA211C300D7593B /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AEA5C40D1BA713D200B9A676 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */; };
-		AEA5C40E1BA713D600B9A676 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */; };
-		AEA5C40F1BA713D600B9A676 /* XCDYouTubeKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEB09AB31C13695B003FC185 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB09AAF1C136937003FC185 /* XCDYouTubeKit.framework */; };
+		AEB09AB41C1369E5003FC185 /* XCDYouTubeKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEB09AAF1C136937003FC185 /* XCDYouTubeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5D91B486450005B254B /* AVKit.framework */; };
 		AEB5B5DC1B4865E1005B254B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */; };
 		AEC5A1BB1BA2F9BF004EDFF5 /* MMMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */; };
 		AEC5A1BC1BA2F9BF004EDFF5 /* MMMarkdown.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AEC5A1C11BA30703004EDFF5 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */; };
 		AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +29,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AEB09AB41C1369E5003FC185 /* XCDYouTubeKit.framework in Copy Frameworks */,
 				AE2140A21BA211EB00D7593B /* Sparkle.framework in Copy Frameworks */,
-				AEA5C40F1BA713D600B9A676 /* XCDYouTubeKit.framework in Copy Frameworks */,
 				AEC5A1BC1BA2F9BF004EDFF5 /* MMMarkdown.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -50,12 +48,11 @@
 		AE19F2DE1B46DB6F00619D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE21409F1BA211C300D7593B /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Spotify Video/Sparkle.framework"; sourceTree = "<group>"; };
 		AE9071491B48402B00C13AD4 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
-		AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = "Spotify Video/XCDYouTubeKit.framework"; sourceTree = "<group>"; };
+		AEB09AAF1C136937003FC185 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = Carthage/Build/Mac/XCDYouTubeKit.framework; sourceTree = "<group>"; };
 		AEB5B5D91B486450005B254B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMMarkdown.framework; path = "Spotify Video/MMMarkdown.framework"; sourceTree = "<group>"; };
 		AEC5A1BF1BA305FF004EDFF5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		AEC5A1C01BA30703004EDFF5 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = "/Users/yene/Developer/OS X/Spotify Video/Spotify Video/XCDYouTubeKit.framework"; sourceTree = "<absolute>"; };
 		AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		AEF626131C104AFC00A6E007 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,14 +62,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB09AB31C13695B003FC185 /* XCDYouTubeKit.framework in Frameworks */,
 				AEB5B5DC1B4865E1005B254B /* AVFoundation.framework in Frameworks */,
-				AEC5A1C11BA30703004EDFF5 /* XCDYouTubeKit.framework in Frameworks */,
-				AEA5C40D1BA713D200B9A676 /* XCDYouTubeKit.framework in Frameworks */,
 				AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */,
 				AEC5A1BB1BA2F9BF004EDFF5 /* MMMarkdown.framework in Frameworks */,
 				AE2140A01BA211C300D7593B /* Sparkle.framework in Frameworks */,
 				AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */,
-				AEA5C40E1BA713D600B9A676 /* XCDYouTubeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +77,7 @@
 		42BF14CBE28045D0C680B85A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AEA5C40C1BA713D200B9A676 /* XCDYouTubeKit.framework */,
+				AEB09AAF1C136937003FC185 /* XCDYouTubeKit.framework */,
 				AE21409F1BA211C300D7593B /* Sparkle.framework */,
 				AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */,
 				AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */,
@@ -310,7 +305,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Spotify\\ Video",
+					"\"$(PROJECT_DIR)/Spotify Video\"",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "Spotify Video/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/Frameworks";
@@ -327,7 +323,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Spotify\\ Video",
+					"\"$(PROJECT_DIR)/Spotify Video\"",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "Spotify Video/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/Frameworks";
