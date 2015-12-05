@@ -31,7 +31,6 @@
   int minute = (int)(position/60);
   int seconds = (int)position % 60;
   NSLog(@"start at %d:%01d", minute, seconds);
-
 }
 
 
@@ -68,7 +67,6 @@
       return;
     }
   }
-  
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -88,13 +86,9 @@
   
   if ([playerState isEqualToString:@"Playing"])  {
     if ([currentSongDetails isEqualToString:songDetails]) {
-      // we already play the song
-      NSLog(@"we already play the song");
-        [player play];
-        CMTime t = CMTimeMakeWithSeconds((int)position,1);
-        [player seekToTime:t];
-     
-      
+      [player play];
+      CMTime t = CMTimeMakeWithSeconds((int)position,1);
+      [player seekToTime:t];
     } else {
       // this is a new song
       [self playSong:songDetails fromPosition:position];
@@ -128,34 +122,12 @@
   }] resume];
 }
 
-- (void)playYoutubeVideo:(NSString *)videoID fromPosition:(int)pos {
-  [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:videoID completionHandler:^(XCDYouTubeVideo *video, NSError *error) {
-    if (video) {
-      if (self.playerView.player) {
-        [self.playerView.player removeObserver:self forKeyPath:@"status"];
-      }
-      
-      NSDictionary *streamURLs = video.streamURLs;
-      NSURL *url = streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?: streamURLs[@(XCDYouTubeVideoQualityHD720)] ?: streamURLs[@(XCDYouTubeVideoQualityMedium360)] ?: streamURLs[@(XCDYouTubeVideoQualitySmall240)];
-      AVPlayer *player = [AVPlayer playerWithURL:url];
-      
-      [player addObserver:self forKeyPath:@"status" options:0 context:nil];
-      player.volume = 0;
-      self.playerView.player = player;
-      [player play];
-      
-      CMTime t = CMTimeMakeWithSeconds(pos, 1);
-      [player seekToTime:t];
-    } else {
-      [[NSAlert alertWithError:error] runModal];
-    }
-  }];
-}
-
 - (void)playYoutubeVideo:(NSString *)videoID {
   [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:videoID completionHandler:^(XCDYouTubeVideo *video, NSError *error) {
     if (video) {
       if (self.playerView.player) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.playerView.player currentItem]];
+        
         [self.playerView.player removeObserver:self forKeyPath:@"status"];
       }
       
@@ -170,7 +142,6 @@
                                                selector:@selector(playerItemDidReachEnd:)
                                                    name:AVPlayerItemDidPlayToEndTimeNotification
                                                  object:[player currentItem]];
-      
       
       player.volume = 0;
       self.playerView.player = player;

@@ -11,6 +11,7 @@ An OSX app that plays the first youtube video that matches the current iTunes/Sp
 * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 ## Todo
+* Implement it for iTunes
 * check if the event listeners are still bound to the previous video
 * let the user skip to the next youtube video
 * display a message at the start in the poster image of the video (waiting for spotify itunes + spinner)
