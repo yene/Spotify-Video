@@ -1,5 +1,5 @@
 # Music Video
-An OSX app that plays the first youtube video that matches the current iTunes/Spotify song. [Download](https://github.com/yene/Spotify-Video/releases/download/1.3/Music.Video.app.zip)
+An OSX app that plays the first youtube video that matches the current iTunes/Spotify song. [**Download**](https://github.com/yene/Spotify-Video/releases/download/1.3/Music.Video.app.zip)
 
 ![screenshot](screenshot.png)
 
