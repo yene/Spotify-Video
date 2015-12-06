@@ -1,7 +1,7 @@
 # Music Video
 An OSX app that plays the first youtube video that matches the current iTunes/Spotify song.
 
-![screenshot](http://i.imgur.com/dsyslie.png)
+![screenshot](screenshot.png)
 
 ## Setup
 * Install dependencies `carthage update --platform Mac`
