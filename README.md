@@ -15,7 +15,7 @@ An OSX app that plays the first youtube video that matches the current iTunes/Sp
 A quick guide for me:
 
 1. Increase *Version* number under General
-2. Commit all files
+2. Commit all files
 3. Push master to Github
 4. In Xcode archive Version and Export a Developer ID-signed Application
 5. Zip the exported application
