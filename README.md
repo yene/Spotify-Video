@@ -37,9 +37,10 @@ A quick guide for me:
 * On github create a new release with the same version (and add a v in front like v2.0)
 
 # Notes on interaction with Shazam
-Shazam does not publish the current song to notification. Report this to the devs.
+Shazam does not publish the current song to notification. Report this to the devs. -> send bug report
 
 # Notes on interaction with iTunes
+iTunes does not publish the current "Playback Position" when the song gets paused/played. -> send bug report
 
 # Notes on interaction with Spotify
 * Only sends notification when sound changes, play, pause.

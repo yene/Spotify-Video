@@ -56,7 +56,7 @@
   
   iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
   if ([iTunes isRunning]) {
-    [center addObserver:self selector:@selector(updateTrackInfoFromSpotify:) name:@"com.apple.iTunes.playerInfo" object:nil];
+    [center addObserver:self selector:@selector(updateTrackInfoFromiTunes:) name:@"com.apple.iTunes.playerInfo" object:nil];
     
     if (iTunes.playerState == iTunesEPlSPlaying) {
       NSString *artist = [[iTunes currentTrack] artist];
@@ -70,7 +70,7 @@
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-  //[[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.apple.iTunes.playerInfo" object:nil];
+  [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.apple.iTunes.playerInfo" object:nil];
   [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.spotify.client.PlaybackStateChanged" object:nil];
 }
 
@@ -93,11 +93,36 @@
       // this is a new song
       [self playSong:songDetails fromPosition:position];
     }
-  } else if ([playerState isEqualToString:@"Paused"])  {
-    [player pause];
-  } else if ([playerState isEqualToString:@"Stopped"])  {
+  } else {
     [player pause];
   }
+}
+
+- (void)updateTrackInfoFromiTunes:(NSNotification *)notification {
+  // Because iTunes does not publish track positition
+  // we use applescript to get it
+  AVPlayer *player = self.playerView.player;
+  
+  iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+  if ([iTunes isRunning]) {
+    if (iTunes.playerState == iTunesEPlSPlaying) {
+      NSString *artist = [[iTunes currentTrack] artist];
+      NSString *name = [[iTunes currentTrack] name];
+      double position = [iTunes playerPosition];
+      NSString *songDetails = [NSString stringWithFormat:@"%@ %@", name, artist];
+      if ([currentSongDetails isEqualToString:songDetails]) {
+        [player play];
+        CMTime t = CMTimeMakeWithSeconds((int)position,1);
+        [player seekToTime:t];
+      } else {
+        // this is a new song
+        [self playSong:songDetails fromPosition:position];
+      }
+    } else {
+      [player pause];
+    }
+  }
+
 }
 
 - (void)playSong:(NSString *)songDetails fromPosition:(double)pos {
