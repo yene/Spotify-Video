@@ -17,6 +17,7 @@
 
 
 @interface AppDelegate ()
+@property (weak) IBOutlet NSImageView *placeholderImageView;
 @property (weak) IBOutlet AVPlayerView *playerView;
 @property (weak) IBOutlet NSWindow *window;
 @end
@@ -35,6 +36,9 @@
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+  self.playerView.hidden = YES;
+  self.placeholderImageView.hidden = NO;
+  
   NSDistributedNotificationCenter *center = [NSDistributedNotificationCenter defaultCenter];
   
   currentSongDetails = @"";
@@ -129,6 +133,9 @@
   currentSongDetails = songDetails;
   requestedPosition = pos;
   startTime = [NSDate date];
+  
+  self.playerView.hidden = NO;
+  self.placeholderImageView.hidden = YES;
   
   songDetails = [songDetails stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
   NSString *url = [NSString stringWithFormat:@"http://youtube.yannickweiss.com/?q=%@", songDetails];

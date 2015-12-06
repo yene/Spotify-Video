@@ -6,18 +6,22 @@ An OSX app that plays the first youtube video that matches the current iTunes/Sp
 ## Setup
 * Install dependencies `carthage update --platform Mac`
 
+## Credits
+* [Iconic](https://useiconic.com/) for the awesome icon.
+
 ## Notes
 * It uses [Sparkle for Github](https://github.com/yene/Sparkle-for-Github) to update.
 * URL format: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 ## Todo
-* Implement it for iTunes
-* check if the event listeners are still bound to the previous video
-* let the user skip to the next youtube video
-* display a message at the start in the poster image of the video (waiting for spotify itunes + spinner)
 * add progress indicator and go blank between loading videos -> maybe fade to black
 * test with spotify free and the ads
-* new artwork and icon
+* remove the small border around the imageview
+* set the view background to black
+
+## Maybe Later
+* let the user skip to the next youtube video
+
 
 ## Credits and Material
 * Example implementation taken from https://gist.github.com/kwylez/5337918

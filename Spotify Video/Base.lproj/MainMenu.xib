@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="placeholderImageView" destination="KrK-0i-fET" id="SJi-3u-uiM"/>
                 <outlet property="playerView" destination="ElB-Fv-IRj" id="Dnv-nM-jVb"/>
                 <outlet property="window" destination="pZY-2d-Mcv" id="Si9-3e-vw1"/>
             </connections>
@@ -110,18 +111,26 @@
             <rect key="contentRect" x="400" y="134" width="1280" height="720"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <value key="minSize" type="size" width="1280" height="720"/>
-            <view key="contentView" id="cCB-s1-3DX">
+            <view key="contentView" misplaced="YES" id="cCB-s1-3DX">
                 <rect key="frame" x="0.0" y="0.0" width="1280" height="720"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="ElB-Fv-IRj">
+                    <avPlayerView misplaced="YES" controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="ElB-Fv-IRj">
                         <rect key="frame" x="0.0" y="0.0" width="1280" height="720"/>
                     </avPlayerView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KrK-0i-fET">
+                        <rect key="frame" x="0.0" y="0.0" width="1282" height="720"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="placeholder" id="I9E-24-F1D"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ElB-Fv-IRj" firstAttribute="leading" secondItem="cCB-s1-3DX" secondAttribute="leading" id="1bD-ys-Y31"/>
                     <constraint firstAttribute="bottom" secondItem="ElB-Fv-IRj" secondAttribute="bottom" id="6pf-zA-dwW"/>
+                    <constraint firstItem="KrK-0i-fET" firstAttribute="top" secondItem="cCB-s1-3DX" secondAttribute="top" id="NmD-3k-xxF"/>
                     <constraint firstAttribute="trailing" secondItem="ElB-Fv-IRj" secondAttribute="trailing" id="W1M-dc-ACU"/>
+                    <constraint firstAttribute="bottom" secondItem="KrK-0i-fET" secondAttribute="bottom" id="jkM-eT-xnj"/>
+                    <constraint firstItem="KrK-0i-fET" firstAttribute="leading" secondItem="cCB-s1-3DX" secondAttribute="leading" id="k98-x2-ns0"/>
+                    <constraint firstAttribute="trailing" secondItem="KrK-0i-fET" secondAttribute="trailing" id="rda-43-WaY"/>
                     <constraint firstItem="ElB-Fv-IRj" firstAttribute="top" secondItem="cCB-s1-3DX" secondAttribute="top" id="xcK-M9-1Pd"/>
                 </constraints>
             </view>
@@ -129,4 +138,7 @@
         </window>
         <customObject id="evT-nY-6Ni" customClass="SUUpdater"/>
     </objects>
+    <resources>
+        <image name="placeholder" width="1282" height="720"/>
+    </resources>
 </document>

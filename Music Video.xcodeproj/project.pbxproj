@@ -13,6 +13,7 @@
 		AE19F2DD1B46DB6F00619D05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE19F2DB1B46DB6F00619D05 /* MainMenu.xib */; };
 		AE2140A01BA211C300D7593B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE21409F1BA211C300D7593B /* Sparkle.framework */; };
 		AE2140A21BA211EB00D7593B /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE21409F1BA211C300D7593B /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE8FAFF91C147B28002F9034 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE8FAFF81C147B28002F9034 /* placeholder.jpg */; };
 		AEB09AB31C13695B003FC185 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB09AAF1C136937003FC185 /* XCDYouTubeKit.framework */; };
 		AEB09AB41C1369E5003FC185 /* XCDYouTubeKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEB09AAF1C136937003FC185 /* XCDYouTubeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5D91B486450005B254B /* AVKit.framework */; };
@@ -47,6 +48,7 @@
 		AE19F2DC1B46DB6F00619D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AE19F2DE1B46DB6F00619D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE21409F1BA211C300D7593B /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Spotify Video/Sparkle.framework"; sourceTree = "<group>"; };
+		AE8FAFF81C147B28002F9034 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		AE9071491B48402B00C13AD4 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		AEB09AAF1C136937003FC185 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = Carthage/Build/Mac/XCDYouTubeKit.framework; sourceTree = "<group>"; };
 		AEB5B5D91B486450005B254B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -108,6 +110,7 @@
 		AE19F2D21B46DB6F00619D05 /* Spotify Video */ = {
 			isa = PBXGroup;
 			children = (
+				AE8FAFF81C147B28002F9034 /* placeholder.jpg */,
 				AEF626131C104AFC00A6E007 /* iTunes.h */,
 				AE9071491B48402B00C13AD4 /* Spotify.h */,
 				AE19F2D31B46DB6F00619D05 /* AppDelegate.h */,
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE19F2DA1B46DB6F00619D05 /* Assets.xcassets in Resources */,
+				AE8FAFF91C147B28002F9034 /* placeholder.jpg in Resources */,
 				AE19F2DD1B46DB6F00619D05 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
