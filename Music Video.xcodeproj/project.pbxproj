@@ -18,8 +18,6 @@
 		AEB09AB41C1369E5003FC185 /* XCDYouTubeKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEB09AAF1C136937003FC185 /* XCDYouTubeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5D91B486450005B254B /* AVKit.framework */; };
 		AEB5B5DC1B4865E1005B254B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5B5DB1B4865E1005B254B /* AVFoundation.framework */; };
-		AEC5A1BB1BA2F9BF004EDFF5 /* MMMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */; };
-		AEC5A1BC1BA2F9BF004EDFF5 /* MMMarkdown.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEC5A1B91BA2F9B9004EDFF5 /* MMMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDB49361B47467D00E78F0D /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +30,6 @@
 			files = (
 				AEB09AB41C1369E5003FC185 /* XCDYouTubeKit.framework in Copy Frameworks */,
 				AE2140A21BA211EB00D7593B /* Sparkle.framework in Copy Frameworks */,
-				AEC5A1BC1BA2F9BF004EDFF5 /* MMMarkdown.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,7 +64,6 @@
 				AEB09AB31C13695B003FC185 /* XCDYouTubeKit.framework in Frameworks */,
 				AEB5B5DC1B4865E1005B254B /* AVFoundation.framework in Frameworks */,
 				AEB5B5DA1B486450005B254B /* AVKit.framework in Frameworks */,
-				AEC5A1BB1BA2F9BF004EDFF5 /* MMMarkdown.framework in Frameworks */,
 				AE2140A01BA211C300D7593B /* Sparkle.framework in Frameworks */,
 				AEDB49371B47467D00E78F0D /* ScriptingBridge.framework in Frameworks */,
 			);
